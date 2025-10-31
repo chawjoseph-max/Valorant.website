@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valorant QR Code</title>
+  <style>
+    /* === BODY & BACKGROUND === */
+    body {
+      background: url('Background val.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* === DARK OVERLAY === */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 0;
+    }
+
+    /* === TITLE === */
+    h2 {
+      margin-bottom: 20px;
+      color: #ff4655;
+      text-shadow: 0 0 10px #ff4655;
+      z-index: 1;
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+
+    /* === QR CODE BOX === */
+    #qrcode {
+      margin: 20px auto;
+      padding: 20px;
+      background: rgba(17, 17, 17, 0.85);
+      border-radius: 15px;
+      box-shadow: 0 0 25px #ff4655;
+      z-index: 1;
+    }
+
+    /* === BUTTON STYLE === */
+    button {
+      margin-top: 30px;
+      padding: 12px 25px;
+      border: none;
+      background: #ff4655;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+      z-index: 1;
+    }
+
+    button:hover {
+      background: #ff5e6b;
+      box-shadow: 0 0 15px #ff4655;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <h2>Scan this QR Code to Continue</h2>
+
+  <div id="qrcode"></div>
+
+  <button onclick="window.location.href='index.html'">Back to Sign In</button>
+
+  <!-- QR Code Generator -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+
+  <script>
+    // === Generate QR code ===
+    new QRCode(document.getElementById("qrcode"), {
+      text: "https://qr.page.link/yourlink",  // 🔗 Replace with your QR-PAGE link
+      width: 200,
+      height: 200,
+      colorDark: "#ffffff",
+      colorLight: "#0a0a0a"
+    });
+  </script>
+</body>
+</html>
